@@ -11,8 +11,8 @@ var https = require('https');
 var fs = require('fs');
 
 var options = {
-  key: fs.readFileSync('/home/pi/spline-key.pem'),
-  cert: fs.readFileSync('/home/pi/spline-cert.pem')
+  key: fs.readFileSync('spline-key.pem'),
+  cert: fs.readFileSync('spline-cert.pem')
 };
 
 /**
