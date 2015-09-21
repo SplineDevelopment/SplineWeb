@@ -6,13 +6,12 @@
 
 var app = require('../app');
 var debug = require('debug')('SplineWeb:server');
-/*var http = require('http');*/
 var https = require('https');
 var fs = require('fs');
 
 var options = {
-  key: fs.readFileSync('spline-key.pem'),
-  cert: fs.readFileSync('spline-cert.pem')
+   key: fs.readFileSync('/home/pi/spline-key.pem'),
+   cert: fs.readFileSync('/home/pi/spline-cert.pem')
 };
 
 /**
@@ -23,11 +22,10 @@ var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
- * Create HTTP server.
+ * Create HTTPS server.
  */
 
-/*var server = http.createServer(app);*/
-var server = https.createServer(options, app)
+var server = https.createServer(options, app);
 
 /**
  * Listen on provided port, on all network interfaces.
